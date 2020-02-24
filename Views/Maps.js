@@ -34,19 +34,19 @@ export default class Maps extends Component {
   };
 
   componentDidMount() {
-    // navigator.geolocation.getCurrentPosition(
-    //   position => {
-    //     mapRegion = {
-    //       longitude: position.coords.longitude,
-    //       latitude: position.coords.latitude,
-    //       latitudeDelta: 0.04,
-    //       longitudeDelta: 0.06
-    //     };
-    //     this.setState({ mapRegion });
-    //   },
-    //   error => alert(error.message),
-    //   { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-    // );
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        mapRegion = {
+          longitude: position.coords.longitude,
+          latitude: position.coords.latitude,
+          latitudeDelta: 0.04,
+          longitudeDelta: 0.06
+        };
+        this.setState({ mapRegion });
+      },
+      error => alert(error.message),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
     axios.get(`http://138.68.13.121/v1/locations/`).then(responseData => {
       this.setState({ locations: responseData.data });
     });

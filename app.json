@@ -10,7 +10,7 @@
     "icon": "./assets/box.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -19,6 +19,12 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "ios": {
+      "bundleIdentifier": "org.freefoodnow2"
+    },
+    "android": {
+      "package": "org.freefoodnow2"
     }
   }
 }

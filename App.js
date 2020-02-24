@@ -53,6 +53,10 @@ export default class App extends Component {
     getDirections(data);
   };
 
+  componentDidMount() {
+    console.disableYellowBox = true;
+  }
+
   render() {
     return <MainNav />;
   }

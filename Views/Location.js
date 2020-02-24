@@ -138,7 +138,11 @@ export default class LocationScreen extends Component {
         >
           <Image
             style={{ width: "100%", height: 375 }}
-            source={{ uri: imageList[0].image }}
+            source={
+              imageList[0]
+                ? { uri: imageList[0].image }
+                : require("../assets/logo.jpg")
+            }
           />
 
           <View style={{ backgroundColor: "#f5f7f8", padding: 10 }}>
@@ -288,6 +292,11 @@ export default class LocationScreen extends Component {
 
           <View style={{ width: "13%", alignItems: "center", margin: 5 }}>
             <TouchableOpacity
+              disabled={
+                navigation.getParam("status", "active") == "active"
+                  ? true
+                  : false
+              }
               onPress={source ? this.handleGetDirections : null}
               style={{
                 width: "100%",
@@ -295,7 +304,10 @@ export default class LocationScreen extends Component {
                 justifyContent: "center",
                 alignItems: "center",
                 height: 40,
-                backgroundColor: "#26a640"
+                backgroundColor:
+                  navigation.getParam("status", "active") == "active"
+                    ? "gray"
+                    : "#26a640"
               }}
               onPress={() => this.Pantry(navigation.getParam("phone", "0000"))}
             >
@@ -311,13 +323,21 @@ export default class LocationScreen extends Component {
 
           <View style={{ width: "13%", alignItems: "center", margin: 5 }}>
             <TouchableOpacity
+              disabled={
+                navigation.getParam("status", "active") == "active"
+                  ? false
+                  : true
+              }
               style={{
                 width: "100%",
                 margin: 5,
                 justifyContent: "center",
                 alignItems: "center",
                 height: 40,
-                backgroundColor: "#26a640"
+                backgroundColor:
+                  navigation.getParam("status", "active") == "active"
+                    ? "#26a640"
+                    : "gray"
               }}
               onPress={() => this.BoxFilled()}
             >
