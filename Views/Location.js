@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   Platform,
   SafeAreaView,
-  StatusBar
+  StatusBar,
+  Alert
 } from "react-native";
 
 import getDirections from "react-native-google-maps-directions";
@@ -41,9 +42,26 @@ export default class LocationScreen extends Component {
   };
 
   BoxFilled = () => {
-    this.props.navigation.navigate("Maps", {
-      Id: this.props.navigation.getParam("id")
-    });
+    Alert.alert(
+      "",
+      "When you mark a box as filled the icon changes to pink for 3 hours. Confirm you've filled the box? ",
+      [
+        {
+          text: "Fill Box",
+          onPress: () => {
+            this.props.navigation.navigate("Maps", {
+              Id: this.props.navigation.getParam("id")
+            });
+          }
+        },
+        {
+          text: "No",
+          onPress: () => {
+            console.log("done");
+          }
+        }
+      ]
+    );
   };
 
   Pantry = phone => {
