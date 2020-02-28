@@ -95,11 +95,11 @@ export default class LocationScreen extends Component {
     // retrieve and save current location
     navigator.geolocation.getCurrentPosition(
       position => {
-        // this.log(
-        //   position.coords.latitude,
-        //   position.coords.longitude,
-        //   navigation.getParam("id", "")
-        // );
+        this.log(
+          position.coords.latitude,
+          position.coords.longitude,
+          navigation.getParam("id", "")
+        );
         this.setState({
           destination: {
             longitude: navigation.getParam("longitude", ""),

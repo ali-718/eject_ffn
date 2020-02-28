@@ -4,7 +4,11 @@
     "slug": "freefoodnow",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/box.png",
@@ -16,15 +20,17 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
-    },
-    "ios": {
-      "bundleIdentifier": "org.freefoodnow2"
+      "bundleIdentifier": "org.freefoodnow3"
     },
     "android": {
-      "package": "org.freefoodnow2"
-    }
-  }
+      "package": "org.company.freefoodnow3"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  },
+  "displayName": "freefoodnow",
+  "name": "freefoodnow"
 }
